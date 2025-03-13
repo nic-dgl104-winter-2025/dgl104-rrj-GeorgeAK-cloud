@@ -112,8 +112,6 @@ Design patterns are typically classified into three main categories based on the
 While design patterns provide valuable solutions to common programming challenges, they are not one-size-fits-all solutions. Developers should be aware of the context in which they apply these patterns and consider the potential for over-engineering or creating complex dependencies. Understanding both design patterns and their anti-patterns can lead to better software design practices.
 
 
-Got it! Here’s a revised version of the README that maintains the structure you provided but presents the content in a different way:
-
 
 
 ### HOW TO CONTRIBUTE TO OPEN SOURCE
@@ -129,3 +127,68 @@ One project that caught my attention was the Guess Game created by Prateek Kalra
 #### Reflection
 
 Searching for the right project to contribute to was a bit challenging. I explored platforms like Good First Issue, Up for Grabs, and CodeTriage to find suitable opportunities. I had specific criteria in mind, and it took considerable time to identify a project that met my expectations. Additionally, sifting through various issues in the project to find one I could effectively address added to the complexity of the process.
+
+
+
+# **Week 10**  
+## **Learning MV* Architectural Patterns**  
+
+This week, I focused on **MV* (Model-View-Anything) architectural patterns**, which are widely used in **UI development**. These patterns help structure applications by separating **data, user interface, and logic**, making them more **maintainable and scalable**.  
+
+
+## **Key Concepts of MV* Patterns**  
+
+**MV*** is a collection of design patterns that all include the **Model (M)** and **View (V)** components but vary in the third part. The most widely used patterns include:  
+
+- **MVC (Model-View-Controller)** – A long-standing and widely adopted pattern.  
+- **MVVM (Model-View-ViewModel)** – A more modern approach, commonly used in mobile and web applications.  
+- **MVP (Model-View-Presenter)** – A variation of MVC, often used in Android app development.  
+- **MVI (Model-View-Intent)** – A pattern found in some mobile architectures.  
+
+
+## **MVC (Model-View-Controller) Explained in Detail**  
+
+One of the video lectures broke down **MVC** into three core components:  
+
+1. **Model** – Manages application data and business logic.  
+2. **View** – Displays the data but does not modify it.  
+3. **Controller** – Acts as an intermediary between the **Model** and **View**, processing user input and updating the Model accordingly.  
+
+---
+
+## **Evolution of MVC in Different Platforms**  
+
+- **iOS Development**: Initially relied heavily on **MVC**, but with the introduction of **SwiftUI**, it has shifted toward **MVVM**.  
+- **Android Development**: Originally used **MVC** and **MVP**, but now prefers **MVVM** and **Jetpack Compose**.  
+- **Web Development**: **MVC** remains prevalent in frameworks such as **Django, Ruby on Rails, Angular, and Vue**.  
+
+---
+
+## **Separation of Concerns and Why It Matters**  
+
+A core principle of **MV* patterns** is keeping **data, user interface, and logic separate**. This makes applications:  
+
+- **Easier to test** – Since the **Model** operates independently, unit testing becomes more straightforward.  
+- **More scalable** – Modular separation prevents one small change from affecting the entire application.  
+- **More maintainable** – Helps keep applications **organized, readable, and less complex**.  
+
+---
+
+## **Applying MVC to Software Development**  
+
+This week, I learned that **MVC remains a foundational UI architecture**. While newer trends like **MVVM** are growing in popularity, **MVC still plays a critical role in modern applications**.  
+
+### **How I Applied My Learning:**  
+ **Examined how MVC structures function in different programming environments.**  
+ **Analyzed real-world implementations in web frameworks like Django and Ruby on Rails.**  
+**Researched how MVVM builds upon MVC in mobile app development.**  
+
+---
+
+## **Reflection**  
+
+This week, I gained hands-on experience with **MV* architectural patterns**, which deepened my understanding. Initially, some concepts seemed **complex**, but breaking them down into their **individual components** helped me grasp them better.  
+
+- The **biggest challenge** was identifying the **subtle differences** between **MVC, MVVM, and MVP**.  
+- However, after **watching lectures, reading additional materials, and analyzing real-world examples**, I now feel **more confident** in distinguishing these patterns.  
+- I also realized that **following established architectural patterns is essential** for **code organization, readability, and long-term maintainability**.  
