@@ -6,25 +6,51 @@
 ## What I Learned This Week
 
 ### Functional Requirements and User Stories
-This week, I explored the concepts of functional requirements and user stories in software development. Key takeaways include:
+### User Stories
+This week, I focused on understanding functional requirements and user stories in software development. I wanted to ensure that my explanations were clear and practical, so I included examples and inline code to make the concepts easier to grasp. Writing about these topics helped me reinforce my knowledge and see how they apply in real-world scenarios.
 
-- **User Stories**: These are written in natural language to describe user interactions with a system. They are great for team communication but often lack technical details.
-- **Technical Design Documents (TDD)**: Used to address technical concerns and provide a high-level design context. They help align the team on architecture and technologies early in the development process.
-- **Functional Requirements**: These describe software features on an input-output basis, similar to programming functions. They provide clear specifications for app features and are often derived from user stories.
+## Functional Requirements and User Stories
 
-Understanding these concepts helps in balancing user experience with technical implementation, ensuring robust and user-friendly applications.
+- **User Stories**: User stories describe user interactions with a system in simple, non-technical language. They improve communication among team members but often lack technical details (Sommerville, 2015). I wrote about user stories to highlight their importance in software development and how they make it easier for teams to understand user needs.
+- **Technical Design Documents (TDD)**: provides technical details about system architecture and technologies. It ensures team alignment early in development (Fowler, 2018).
+
+#### Example of a TDD Concept in Code (Python Flask API Example):
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/course/<course_id>')
+def get_course(course_id):
+    return jsonify({"course_id": course_id, "title": "Software Engineering"})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+This API structure aligns with TDD principles, where a clear function defines how course data is retrieved (Fowler, 2018).
+
+### Functional Requirements
+Functional requirements describe **what the software should do**, specifying inputs and expected outputs (Sommerville, 2015). This part of my write-up helped me think critically about how to define requirements clearly so developers understand what needs to be built.
+
+#### Example of Functional Requirements:
+1. The system **must** allow users to register with an email and password.
+2. The system **must** allow users to reset their passwords via email.
+3. The system **must** display error messages if login credentials are incorrect.
 
 ## Research on Haskell
 
 ### Overview
-Haskell is a purely functional programming language known for its strong static typing and lazy evaluation. It emphasizes immutability and mathematical precision, making it a favorite among those who appreciate clean and reliable code.
+## Research on Haskell
+Haskell is a purely functional programming language that uses lazy evaluation and strong static typing. It is widely used in academia and industries like finance, data analysis, and compiler development (Haskell.org, 2025). I enjoyed learning about Haskell because its functional programming approach is different from the imperative languages I’m used to.
 
-### Applications
-1. **Academic Research**: Used for teaching functional programming concepts.
-2. **Financial Systems**: Employed by companies like Standard Chartered for reliable financial software.
-3. **Web Development**: Frameworks like Yesod and Servant leverage Haskell's strengths for building web services.
-4. **Data Analysis**: Suitable for handling large datasets and complex computations.
-5. **Compiler Development**: Ideal for developing compilers and interpreters due to its support for abstract syntax trees.
+#### Haskell Example - Fibonacci Sequence:
+```haskell
+fib :: Int -> Int
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+```
+This example demonstrates recursion, a fundamental concept in functional programming (Haskell.org, 2025).
 
 ### Users
 - Academic Researchers
@@ -38,6 +64,7 @@ Haskell is a purely functional programming language known for its strong static 
 2. **Haskell.org**: The official site with comprehensive documentation and tutorials.
 3. **Hackage**: A central package archive for discovering and sharing Haskell libraries.
 4. **Stack Overflow**: A platform for solving specific problems and learning best practices in the Haskell community.
+
 
 ## User Stories
 
@@ -79,116 +106,587 @@ As a user, I want to view, cancel, or modify my bookings easily.
 For my community coding project, My group  decided to focus on PHP for both the front end and back end. My experience with PHP is limited, but I'm eager to learn more about it. We chose PHP because it's a versatile language that powers many websites and applications, making it ideal for developing dynamic and interactive web pages. PHP is widely used for server-side scripting, and its integration with databases like MySQL makes it perfect for building robust web applications. Additionally, PHP has a large and supportive community, which is beneficial for beginners seeking guidance and resources. [Learn more about PHP](https://www.php.net/manual/en/intro-whatis.php)
 
 
+## References
+
+1. Sommerville, I. (2015). *Software engineering* (10th ed.). Pearson Education.
+2. PHP.net. (2025). *What is PHP?* Retrieved from [https://www.php.net/manual/en/intro-whatis.php](https://www.php.net/manual/en/intro-whatis.php)
+3. Haskell.org. (2025). *Haskell language documentation.* Retrieved from [https://www.haskell.org/documentation](https://www.haskell.org/documentation)
+4. Fowler, M. (2018). *Refactoring: Improving the design of existing code.* Addison-Wesley.
+
+
+
+
 ## Week 9
 ### Summary of Design Patterns
 
 **Overview:**
-Design patterns are established solutions to common problems in software design, particularly within the object-oriented programming paradigm. They were popularized by a group of four authors known as the "Gang of Four" in their book "Design Patterns: Elements of Reusable Object-Oriented Software," published in the early 1990s. This summary outlines key principles, types of design patterns, and specific examples discussed in the transcript.
+This week, I explored design patterns and how they help in software development. I also learned about contributing to open-source projects, which opened my eyes to different ways to be involved in the development community. Writing about these topics helped me connect theory with real-world applications, and I included examples to clarify each concept.
 
-**Key Principles:**
-1. **Program to an Interface, Not an Implementation:** This principle encourages developers to define interfaces that specify expected behaviors without dictating how those behaviors should be implemented. This promotes flexibility and reduces dependencies between classes.
-   
-2. **Favor Object Composition Over Class Inheritance:** Instead of relying solely on inheritance to create complex behaviors, this principle advocates for composing objects from smaller, simpler components. This approach can lead to more maintainable and less brittle code.
+ **Understanding Design Patterns**
+Design patterns provide reusable solutions to common programming problems. They were formalized by the "Gang of Four" and help improve code organization and maintainability (Refactoring Guru, 2024). While writing about this, I realized that patterns are not strict rules but guidelines that help developers structure their applications better.
+
+### Key Principles
+1. **Program to an Interface, Not an Implementation** – This principle encourages defining behaviors without tying them to specific implementations. It helps improve flexibility in coding (Refactoring Guru, 2024).
+2. **Favor Object Composition Over Class Inheritance** – Instead of relying on deep inheritance trees, it's often better to compose objects from smaller components, making code easier to manage and modify.
+
 
 **Categories of Design Patterns:**
 Design patterns are typically classified into three main categories based on their purpose:
 1. **Creational Patterns:** These patterns deal with object creation mechanisms, aiming to create objects in a manner suitable to the situation. An example is the Singleton pattern, which ensures a class has only one instance and provides a global point of access to it.
-   
-2. **Structural Patterns:** These patterns focus on how classes and objects are composed to form larger structures. They help ensure that if one part of a system changes, the entire system doesn't need to change. 
+##### Example - Singleton Pattern (Python)
+```python
+class Singleton:
+    _instance = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
 
-3. **Behavioral Patterns:** These patterns are concerned with algorithms and the assignment of responsibilities between objects. They help define how objects interact and communicate with one another.
+singleton1 = Singleton()
+singleton2 = Singleton()
+
+print(singleton1 is singleton2)  # Output: True
+```
+This ensures that only one instance of the class is created.
+
+##### Example - Factory Pattern (JavaScript)
+```javascript
+class Car {
+    constructor(model, year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+function carFactory(model, year) {
+    return new Car(model, year);
+}
+
+const car1 = carFactory("Toyota", 2023);
+console.log(car1.model);  // Output: Toyota
+```
+This pattern helps encapsulate object creation logic.
+   
+2. **Structural Patterns:**  These patterns focus on how objects and classes are composed to form larger structures. They help ensure that if one part of a system changes, the entire system doesn't need to change.
+##### Example - Adapter Pattern (Python)
+```python
+class EuropeanPlug:
+    def plug_in(self):
+        return "Powering device with European plug."
+
+class USPlug:
+    def connect(self):
+        return "Powering device with US plug."
+
+class PlugAdapter:
+    def __init__(self, plug):
+        self.plug = plug
+    
+    def plug_in(self):
+        return self.plug.connect()
+
+us_plug = USPlug()
+adapted_plug = PlugAdapter(us_plug)
+print(adapted_plug.plug_in())  # Output: Powering device with US plug.
+```
+The adapter pattern allows incompatible interfaces to work together.
+
+3. **Behavioral Patterns:** These patterns are concerned with algorithms and the assignment of responsibilities between objects. These patterns focus on communication between objects.
+
+##### Example - Observer Pattern (JavaScript)
+```javascript
+class Subject {
+    constructor() {
+        this.observers = [];
+    }
+
+    addObserver(observer) {
+        this.observers.push(observer);
+    }
+
+    notifyObservers(message) {
+        this.observers.forEach(observer => observer.update(message));
+    }
+}
+
+class Observer {
+    update(message) {
+        console.log(`Received update: ${message}`);
+    }
+}
+
+const subject = new Subject();
+const observer1 = new Observer();
+const observer2 = new Observer();
+
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+subject.notifyObservers("New event occurred!");
+```
+This pattern is useful in event-driven programming, where multiple objects need to react to state changes.
 
 **Examples of Design Patterns:**
 - **Singleton Pattern:** This creational pattern restricts a class to a single instance and provides a global access point to that instance. It is useful for managing shared resources, such as database connections.
   
 - **Observer Pattern:** This behavioral pattern allows a subject to notify multiple observers about state changes, facilitating a one-to-many dependency. This is particularly useful in user interface design, where changes in one part of the system need to be reflected in others.
 
-**Resources for Further Learning:**
-- Wikipedia provides a comprehensive list of design patterns, including those not covered by the Gang of Four.
-- Refactoring Guru offers approachable explanations and graphics related to design patterns.
-- "Learning JavaScript Design Patterns" by Addy Osmani is a recommended resource for understanding design patterns in JavaScript.
 
 **Conclusion:**
 While design patterns provide valuable solutions to common programming challenges, they are not one-size-fits-all solutions. Developers should be aware of the context in which they apply these patterns and consider the potential for over-engineering or creating complex dependencies. Understanding both design patterns and their anti-patterns can lead to better software design practices.
 
 
+### What I Learned
+Before this week, I thought open-source contributions required advanced coding skills. However, I found that anyone can contribute by improving documentation, managing issues, and even assisting with design or translation (GitHub Docs, 2024). This realization was exciting because it meant I could be part of meaningful projects, even as a beginner.
 
+### Steps to Contribute
+1. **Find a Project** – I used platforms like "Up For Grabs" and "Good First Issue" to look for beginner-friendly projects (Up For Grabs, 2024; Good First Issue, 2024).
+2. **Fork and Clone** – I practiced forking repositories and cloning them to my local machine.
+3. **Make a Contribution** – I found a project that needed better range validation in a guessing game and wrote a small fix.
+4. **Submit a Pull Request** – I followed the project’s contribution guidelines and submitted my changes for review(GitHub Docs, 2024).
 
-### HOW TO CONTRIBUTE TO OPEN SOURCE
+### Example - Fixing Input Validation in JavaScript
+I improved the input validation logic in a number guessing game.
+```javascript
+function validateInput(number) {
+    if (number < 1 || number > 100) {
+        return "Please enter a number between 1 and 100.";
+    }
+    return "Valid input!";
+}
+console.log(validateInput(150));  // Output: "Please enter a number between 1 and 100."
+```
+This simple fix made the game more user-friendly.
 
-I recently learned that contributing to open source projects is accessible to everyone, not just those with advanced coding skills. There are numerous ways to get involved, such as helping with event organization, enhancing design elements, writing documentation, managing project issues, facilitating discussions, and reviewing code contributions. This realization was a relief for me, as I often doubted my coding abilities. I also discovered valuable resources like [First Contributions](https://firstcontributions.github.io/), [First Timers Only](https://www.firsttimersonly.com/), and [Up For Grabs](https://up-for-grabs.net/#/), which are excellent starting points for newcomers seeking welcoming projects. It’s crucial to choose a project that is genuinely open source, active, and supportive of beginners.
-
-Before diving into this world, I hesitated to contribute because I felt inexperienced. However, I now recognize that open source is inclusive and offers opportunities for everyone, including those who excel in writing, design, or translation. The guide I explored helped me identify tasks that align with my skills and interests, which was incredibly motivating. It shifted my perspective from believing that only seasoned developers could contribute to understanding that open source is a space for all—writers, designers, translators, and even those just starting their coding journey. Moreover, open source extends beyond software; it encompasses everything from educational materials to creative projects, broadening the scope for contributions. This newfound understanding has opened my eyes to the vast possibilities within the open source community.
+## Reflection
+This week, I gained confidence in both software design principles and open-source collaboration. Design patterns helped me understand how to structure applications, while contributing to open-source projects showed me that I could be part of a global community. Searching for the right project to contribute to was a bit challenging. I explored platforms like Good First Issue, Up for Grabs, and CodeTriage to find suitable opportunities. I had specific criteria in mind, and it took considerable time to identify a project that met my expectations.I plan to keep exploring different patterns and contributing more to projects that align with my interests.
 
 #### Finding a Project to Contribute To
 
 One project that caught my attention was the Guess Game created by Prateek Kalra, which can be found [here](https://github.com/prateekkalra/guess-game). I focused on setting appropriate ranges for different difficulty levels and ensuring that players received clear messages if they entered numbers outside those ranges. By tackling these challenges, I helped enhance the game's functionality and overall player experience.
 
-#### Reflection
 
-Searching for the right project to contribute to was a bit challenging. I explored platforms like Good First Issue, Up for Grabs, and CodeTriage to find suitable opportunities. I had specific criteria in mind, and it took considerable time to identify a project that met my expectations. Additionally, sifting through various issues in the project to find one I could effectively address added to the complexity of the process.
+## References
+1. GitHub Docs. (2024). *How to contribute to open source projects.* Retrieved from [https://docs.github.com/en/contributing-to-open-source](https://docs.github.com/en/contributing-to-open-source)
+2. Refactoring Guru. (2024). *Design patterns explained.* Retrieved from [https://refactoring.guru/design-patterns](https://refactoring.guru/design-patterns)
+3. Up For Grabs. (2024). *Find open source projects.* Retrieved from [https://up-for-grabs.net](https://up-for-grabs.net)
+4. Good First Issue. (2024). *A guide to beginner-friendly open source contributions.* Retrieved from [https://goodfirstissue1.dev](https://goodfirstissue.dev)
+5. Mozilla Developer Network. (2024). *JavaScript best practices.* Retrieved from [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+
 
 
 
 # **Week 10**  
 ## **Learning MV* Architectural Patterns**  
 
-This week, I focused on **MV* (Model-View-Anything) architectural patterns**, which are widely used in **UI development**. These patterns help structure applications by separating **data, user interface, and logic**, making them more **maintainable and scalable**.  
+This week, I explored **MV* (Model-View) architectural patterns**, which are widely used in UI development. These patterns structure applications by separating data, user interface, and logic, making them more maintainable and scalable (Django Project, 2025; Android Developers, 2025). Here’s how I wrote about them, with examples and references.  
+
 
 
 ## **Key Concepts of MV* Patterns**  
 
-**MV*** is a collection of design patterns that all include the **Model (M)** and **View (V)** components but vary in the third part. The most widely used patterns include:  
+The MVfamily includes several architectural patterns that all share the **Model (M)** and **View (V)** components but differ in their third part. The most commonly used ones are:    
 
-- **MVC (Model-View-Controller)** – A long-standing and widely adopted pattern.  
-- **MVVM (Model-View-ViewModel)** – A more modern approach, commonly used in mobile and web applications.  
-- **MVP (Model-View-Presenter)** – A variation of MVC, often used in Android app development.  
-- **MVI (Model-View-Intent)** – A pattern found in some mobile architectures.  
-
-
-## **MVC (Model-View-Controller) Explained in Detail**  
-
-One of the video lectures broke down **MVC** into three core components:  
+- **MVC (Model-View-Controller)**  
+ MVC is one of the oldest and most well-known UI architectural patterns and is a long-standing and widely adopted pattern. . It separates concerns into three distinct parts:  
 
 1. **Model** – Manages application data and business logic.  
-2. **View** – Displays the data but does not modify it.  
-3. **Controller** – Acts as an intermediary between the **Model** and **View**, processing user input and updating the Model accordingly.  
+2. **View** – Displays data to the user but does not modify it.  
+3. **Controller** – Acts as an intermediary, processing user input and updating the **Model** accordingly.  
+
+✅ **Example: Simple MVC Implementation in Python Flask**  
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Model
+class Task:
+    def __init__(self, title):
+        self.title = title
+
+# View (HTML Template)
+@app.route('/')
+def index():
+    task = Task("Complete MVC tutorial")
+    return render_template('index.html', task=task)
+
+# Controller
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+In this example, the **Model** (`Task` class) holds data, the **View** (`index.html`) displays it, and the **Controller** (`index()` function) handles interactions.  
 
 ---
 
-## **Evolution of MVC in Different Platforms**  
+## **MVVM (Model-View-ViewModel) and Its Importance**  
 
-- **iOS Development**: Initially relied heavily on **MVC**, but with the introduction of **SwiftUI**, it has shifted toward **MVVM**.  
-- **Android Development**: Originally used **MVC** and **MVP**, but now prefers **MVVM** and **Jetpack Compose**.  
-- **Web Development**: **MVC** remains prevalent in frameworks such as **Django, Ruby on Rails, Angular, and Vue**.  
+MVVM is an evolution of MVC and is often used in modern mobile and web development (Android Developers, 2025). It helps separate concerns even further:  
+
+1. **Model** – Represents the application data and logic.  
+2. **View** – Displays information to the user.  
+3. **ViewModel** – Acts as an intermediary, preparing data for the View while keeping the Model unaware of UI logic.  
+
+**Example: MVVM in JavaScript (Vue.js)**  
+
+```javascript
+const app = Vue.createApp({
+  data() {
+    return {
+      task: "Complete MVVM tutorial"
+    };
+  }
+});
+
+app.mount("#app");
+```
+
+Here, the ViewModel (Vue instance) manages data binding between the Model and View (HTML).  
+
+ ## MVP (Model-View-Presenter) 
+
+MVP is a variation of MVC, where the Presenter takes full responsibility for UI logic instead of the Controller. It is commonly used in Android development (Android Developers, 2025).  
+
+ **Example: MVP in Java (Android)**  
+
+```java
+// Model
+public class User {
+    private String name;
+
+    public User(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// Presenter
+public class UserPresenter {
+    private UserView view;
+
+    public UserPresenter(UserView view) {
+        this.view = view;
+    }
+
+    public void showUser() {
+        User user = new User("Alice");
+        view.displayUser(user.getName());
+    }
+}
+
+// View Interface
+public interface UserView {
+    void displayUser(String name);
+}
+```
+
+In this **MVP** example, the **Presenter** (`UserPresenter`) handles logic, ensuring the **View** (`UserView`) only displays data.  
 
 ---
+
+## **MVI (Model-View-Intent) and Unidirectional Data Flow**  
+
+MVI is a relatively newer pattern that enforces unidirectional data flow to make applications more predictable. It is particularly useful in state management frameworks (JetBrains, 2025).  
+
+**Example: MVI in Kotlin (Android Jetpack Compose)**  
+
+```kotlin
+data class UIState(val counter: Int)
+
+sealed class UIIntent {
+    object Increment : UIIntent()
+    object Decrement : UIIntent()
+}
+
+fun reducer(state: UIState, intent: UIIntent): UIState {
+    return when (intent) {
+        is UIIntent.Increment -> state.copy(counter = state.counter + 1)
+        is UIIntent.Decrement -> state.copy(counter = state.counter - 1)
+    }
+}
+```
+
+This **MVI** example ensures data flows in a single direction, making debugging easier.  
+
+---  
+
+
+## **Evolution of MVC in Different Platforms**
+Different platforms have adapted **MVC** in unique ways:    
+
+- **iOS Development**: Initially relied heavily on MVC, but with the introduction of SwiftUI, it has shifted toward MVVM.  
+- **Android Development**: Originally used MVC and MVP, but now prefers MVVM and Jetpack Compose.  
+- **Web Development**: **MVC** remains prevalent in frameworks such as Django, Ruby on Rails, Angular, and Vue.  
 
 ## **Separation of Concerns and Why It Matters**  
 
-A core principle of **MV* patterns** is keeping **data, user interface, and logic separate**. This makes applications:  
+A key takeaway from learning **MV* patterns** is the importance of separating **data, user interface, and logic**. This improves:  
 
-- **Easier to test** – Since the **Model** operates independently, unit testing becomes more straightforward.  
-- **More scalable** – Modular separation prevents one small change from affecting the entire application.  
-- **More maintainable** – Helps keep applications **organized, readable, and less complex**.  
+- **Testability** – Independent modules are easier to test.  
+- **Scalability** – Reduces complexity as applications grow.  
+- **Maintainability** – Makes debugging and future updates easier.  
 
----
 
 ## **Applying MVC to Software Development**  
 
 This week, I learned that **MVC remains a foundational UI architecture**. While newer trends like **MVVM** are growing in popularity, **MVC still plays a critical role in modern applications**.  
 
 ### **How I Applied My Learning:**  
- **Examined how MVC structures function in different programming environments.**  
- **Analyzed real-world implementations in web frameworks like Django and Ruby on Rails.**  
-**Researched how MVVM builds upon MVC in mobile app development.**  
+ 1. Examined how MVC structures function in different programming environments. 
+ 2. Analyzed real-world implementations in web frameworks like Django and Ruby on Rails.
+ 3. Researched how MVVM builds upon MVC in mobile app development.**  
 
 ---
 
 ## **Reflection**  
 
-This week, I gained hands-on experience with **MV* architectural patterns**, which deepened my understanding. Initially, some concepts seemed **complex**, but breaking them down into their **individual components** helped me grasp them better.  
+As I wrote this section, I found **MVC** easy to understand since it is widely used, but **MVI** was more complex because of its strict data flow rules. **MVVM** felt like the most balanced approach, and I can see why it is becoming a popular choice for modern applications.  
 
-- The **biggest challenge** was identifying the **subtle differences** between **MVC, MVVM, and MVP**.  
-- However, after **watching lectures, reading additional materials, and analyzing real-world examples**, I now feel **more confident** in distinguishing these patterns.  
-- I also realized that **following established architectural patterns is essential** for **code organization, readability, and long-term maintainability**.  
+Adding code examples for each pattern helped me grasp their differences. While writing, I made sure to keep explanations clear so that someone new to architectural patterns can follow along easily.  
+
+
+## **References**  
+
+1. Vue.js. (2025). *Introduction to Vue.js framework*. Retrieved from [https://vuejs.org/guide/introduction.html](https://vuejs.org/guide/introduction.html)  
+2. JetBrains. (2025). *Kotlin and MVI: Best practices for state management*. Retrieved from [https://blog.jetbrains.com/kotlin-mvi](https://blog.jetbrains.com/kotlin-mvi)  
+3. Android Developers. (2025). *Understanding MVVM in Android applications*. Retrieved from [https://developer.android.com/jetpack/guide](https://developer.android.com/jetpack/guide)  
+4. Django Project. (2025). *MVC in web frameworks*. Retrieved from [https://docs.djangoproject.com/en/4.0/mvc-overview](https://docs.djangoproject.com/en/4.0/mvc-overview)  
+5. Swift.org. (2025). *MVVM in SwiftUI: The future of iOS architecture*. Retrieved from [https://swift.org/mvvm-guide](https://swift.org/mvvm-guide)  
+
+
+
+### **  Week 11: Object-Oriented Programming (OOP) Concepts and Application**  
+
+During  this week, I explored Object-Oriented Programming (OOP) extensively with special focus on key OOP principles and SOLID design principles and how they are used in practice. Below is a systematic outline of what I learned with examples, what it was like to apply OOP on a team programming assignment, and what I learned about our choice of programming language.
+
+
+## **Understanding Object-Oriented Programming (OOP)**  
+
+OOP is a programming paradigm that organizes code into objects, making it modular, reusable, and scalable. This approach is widely used in modern software development due to its efficiency and maintainability (TechTarget, 2024).  
+
+OOP consists of four fundamental principles which are :  
+
+### **1. Encapsulation**  
+Encapsulation restricts direct access to an object’s data and allows controlled access through methods. This ensures data protection and prevents unintended modifications.  
+
+ **Example of Encapsulation in Java:**  
+
+```java
+class BankAccount {
+    private double balance; // Private variable (not directly accessible)
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() { // Controlled access via getter
+        return balance;
+    }
+
+    public void deposit(double amount) { // Controlled modification
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+}
+```
+
+This example shows that balance is private, and can only be changed through controlled methods like **deposit()** (Wikipedia, 2024).
+
+---
+
+### **2. Abstraction**  
+Abstraction hides the implementation details and only exposes necessary functionalities.  
+
+ **Example of Abstraction in Java:**  
+
+```java
+abstract class Animal {
+    abstract void makeSound(); // Abstract method (must be implemented by subclasses)
+
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.makeSound();  // Outputs: Woof! Woof!
+    }
+}
+```
+This ensures developers can interact with a class without needing to understand its full complexity (Stack Overflow, 2024).  
+
+---
+
+### **3. Inheritance**  
+Inheritance allows a class to reuse properties and methods from another class, enabling code reusability and hierarchical relationships between objects.  
+
+ **Example of Inheritance in Java:**  
+
+```java
+class Vehicle {
+    String brand = "Toyota";
+
+    void honk() {
+        System.out.println("Beep! Beep!");
+    }
+}
+
+class Car extends Vehicle {
+    String model = "Camry";
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.honk(); // Outputs: Beep! Beep!
+        System.out.println("Car brand: " + myCar.brand + ", Model: " + myCar.model);
+    }
+}
+```
+With inheritance, the Car class doesn't need to re-write the honk() method — it inherits it from Vehicle (Eluminous Technologies, 2023)  
+
+
+### **4. Polymorphism**  
+Polymorphism allows a **single method to be used in different ways** depending on the object.  
+
+  **Example of Polymorphism in Java:**  
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog();
+        myAnimal.makeSound();  // Outputs: Woof! Woof!
+    }
+}
+```
+This makes programs more flexible and scalable (Gee CS Oswego, 2024).  
+
+---
+
+## **SOLID Principles and OOP Best Practices**  
+
+To enhance code maintainability and flexibility, we also learned about the SOLID design principles  
+
+### **1. Single Responsibility Principle (SRP)**  
+> A class should have only **one** reason to change.  
+🔹 **Example:** Instead of having a single `User` class handle both authentication and database storage, we should split these responsibilities into separate classes.  
+Each class should only have one job. This helps keep code focused and easy to debug.
+
+“There should never be more than one reason for a class to change.”
+(Clean Coder, 2014a)
+
+🔗 Reference: [The Single Responsibility Principle - Clean Coder](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html)  
+
+---
+
+### **2. Open-Closed Principle (OCP)**  
+> Classes should be open for extension but closed for modification.  
+
+🔹 **Example:** Instead of modifying existing classes, we should use inheritance or interfaces to extend their functionality.  
+
+🔗 Reference: [The Open-Closed Principle - Clean Coder](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)  
+
+---
+
+### **3. Interface Segregation Principle (ISP)**  
+> Clients should not be forced to depend on interfaces they do not use.  
+
+ **Example:** Instead of a large interface handling multiple responsibilities, break it into smaller, specific interfaces.  
+
+🔗 Reference: [Interface Segregation Principle - Wikipedia](https://en.wikipedia.org/wiki/Interface_segregation_principle#:~:text=In%20the%20field%20of%20software,are%20of%20interest%20to%20them.)  
+
+---
+
+## **Applying OOP to Our Group Programming Assignment**  
+
+### **How OOP Will Be Used in Our Project**  
+For our group programming assignment, we will apply OOP principles to ensure our project would be modular, maintainable, and reusable**.  
+
+**Example: Implementing OOP for a User Management System**  
+- `User` (Base class): Stores user details.  
+- `AdminUser` (Child class): Extends `User` with additional permissions.  
+- `GuestUser` (Child class): Extends `User` with limited access.  
+- `AuthenticationManager or Leader` (Encapsulation): Manages user login without exposing sensitive data.  
+
+By structuring our code this way, we separate responsibilities and reduce complexity, making future modifications easier.  
+
+---
+
+## **Is Our Chosen Programming Language OOP-Capable?**  
+
+### **Chosen Language: Python**  
+Python is fully OOP-capable, supporting encapsulation, inheritance, polymorphism, and abstraction.  
+
+ **Does Python support other paradigms?**  
+Yes! Besides OOP, Python also supports:  
+- **Procedural Programming** (using functions without objects)  
+- **Functional Programming** (using lambda functions and higher-order functions like `map()`, `reduce()`, and `filter()`)  
+
+ **Why is Python a good choice?**  
+- It allows **multiple paradigms** (OOP, procedural, and functional).  
+- It has **easy-to-use syntax**, making it beginner-friendly.  
+- It has **strong community support** for best practices.  
+
+  **Example of Python’s OOP Support:**  
+
+```python
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def display_info(self):
+        print(f"User: {self.name}, Email: {self.email}")
+
+class AdminUser(User):
+    def __init__(self, name, email, admin_level):
+        super().__init__(name, email)
+        self.admin_level = admin_level
+
+admin = AdminUser("Alice", "alice@example.com", "SuperAdmin")
+admin.display_info()
+```
+
+---
+
+## **Final Thoughts**  
+OOP is a powerful paradigm that makes code structured, reusable, and scalable. Using OOP principles and SOLID design in our group project ensures that our code is easy to maintain, extend, and debug. Python’s full OOP support, combined with its ability to support multiple paradigms, makes it an ideal language for our project.  
+
+---
+
+### **References (APA Style)**  
+
+1. Martin, R. C. (2014). *The Single Responsibility Principle*. Clean Coder Blog. Retrieved from [https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html)  
+2. Martin, R. C. (2014). *The Open-Closed Principle*. Clean Coder Blog. Retrieved from [https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)  
+3. Wikipedia. (2025). *Interface Segregation Principle*. Retrieved from [https://en.wikipedia.org/wiki/Interface_segregation_principle](https://en.wikipedia.org/wiki/Interface_segregation_principle) 
+4. TechTarget. (2024). OOP Explained. Retrieved from https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP
+5. Dev.to. (2024). Combining OOP and Functional Programming. Retrieved from https://dev.to/adityabhuyan/combining-object-oriented-and-functional-programming 
+6. Gee CS Oswego. (2024). CS Resources on OOP Principles. Retrieved from [https://gee.cs.oswego.edu/dl/groups](https://gee.cs.oswego.edu/dl/groups)
+7. Stack Overflow. (2024). How do you design object-oriented projects?. Retrieved from [https://stackoverflow.com/questions/1100819/how-do-you-design-object-oriented-projects](https://stackoverflow.com/questions/1100819/how-do-you-design-object-oriented-projects)
+
