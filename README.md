@@ -425,7 +425,7 @@ Different platforms have adapted **MVC** in unique ways:
 
 ## **Separation of Concerns and Why It Matters**  
 
-A key takeaway from learning **MV* patterns** is the importance of separating **data, user interface, and logic**. This improves:  
+A key takeaway from learning MV patterns is the importance of separating data, user interface, and logic. This improves:  
 
 - **Testability** – Independent modules are easier to test.  
 - **Scalability** – Reduces complexity as applications grow.  
@@ -434,7 +434,7 @@ A key takeaway from learning **MV* patterns** is the importance of separating **
 
 ## **Applying MVC to Software Development**  
 
-This week, I learned that **MVC remains a foundational UI architecture**. While newer trends like **MVVM** are growing in popularity, **MVC still plays a critical role in modern applications**.  
+This week, I learned that MVC remains a foundational UI architecture. While newer trends like MVVM are growing in popularity, MVC still plays a critical role in modern applications (Django Project, 2025; Swift.org, 2025).  
 
 ### **How I Applied My Learning:**  
  1. Examined how MVC structures function in different programming environments. 
@@ -445,7 +445,7 @@ This week, I learned that **MVC remains a foundational UI architecture**. While 
 
 ## **Reflection**  
 
-As I wrote this section, I found **MVC** easy to understand since it is widely used, but **MVI** was more complex because of its strict data flow rules. **MVVM** felt like the most balanced approach, and I can see why it is becoming a popular choice for modern applications.  
+As I wrote this section, I found MVC easy to understand since it is widely used, but MVI was more complex because of its strict data flow rules. MVVM felt like the most balanced approach, and I can see why it is becoming a popular choice for modern applications.  
 
 Adding code examples for each pattern helped me grasp their differences. While writing, I made sure to keep explanations clear so that someone new to architectural patterns can follow along easily.  
 
@@ -673,12 +673,10 @@ admin = AdminUser("Alice", "alice@example.com", "SuperAdmin")
 admin.display_info()
 ```
 
----
-
 ## **Final Thoughts**  
 OOP is a powerful paradigm that makes code structured, reusable, and scalable. Using OOP principles and SOLID design in our group project ensures that our code is easy to maintain, extend, and debug. Python’s full OOP support, combined with its ability to support multiple paradigms, makes it an ideal language for our project.  
 
----
+
 
 ### **References (APA Style)**  
 
