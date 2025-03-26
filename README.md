@@ -30,12 +30,12 @@ if __name__ == '__main__':
 This API structure aligns with TDD principles, where a clear function defines how course data is retrieved (Fowler, 2018).
 
 ### Functional Requirements
-Functional requirements describe **what the software should do**, specifying inputs and expected outputs (Sommerville, 2015). This part of my write-up helped me think critically about how to define requirements clearly so developers understand what needs to be built.
+Functional requirements describe what the software should do, specifying inputs and expected outputs (Sommerville, 2015). This part of my write-up helped me think critically about how to define requirements clearly so developers understand what needs to be built.
 
 #### Example of Functional Requirements:
-1. The system **must** allow users to register with an email and password.
-2. The system **must** allow users to reset their passwords via email.
-3. The system **must** display error messages if login credentials are incorrect.
+1. The system must allow users to register with an email and password.
+2. The system must allow users to reset their passwords via email.
+3. The system must display error messages if login credentials are incorrect.
 
 ## Research on Haskell
 
@@ -52,7 +52,7 @@ fib n = fib (n-1) + fib (n-2)
 ```
 This example demonstrates recursion, a fundamental concept in functional programming (Haskell.org, 2025).
 
-### Users
+### Users of Haskell Language
 - Academic Researchers
 - Financial Software Developers
 - Web Developers
@@ -120,7 +120,7 @@ For my community coding project, My group  decided to focus on PHP for both the 
 ### Summary of Design Patterns
 
 **Overview:**
-This week, I explored design patterns and how they help in software development. I also learned about contributing to open-source projects, which opened my eyes to different ways to be involved in the development community. Writing about these topics helped me connect theory with real-world applications, and I included examples to clarify each concept.
+This week, the class explored design patterns and how they help in software development. I also learned about contributing to open-source projects, which opened my eyes to different ways to be involved in the development community. Writing about these topics helped me connect theory with real-world applications, and I included examples to clarify each concept.
 
  **Understanding Design Patterns**
 Design patterns provide reusable solutions to common programming problems. They were formalized by the "Gang of Four" and help improve code organization and maintainability (Refactoring Guru, 2024). While writing about this, I realized that patterns are not strict rules but guidelines that help developers structure their applications better.
@@ -134,6 +134,7 @@ Design patterns provide reusable solutions to common programming problems. They 
 Design patterns are typically classified into three main categories based on their purpose:
 1. **Creational Patterns:** These patterns deal with object creation mechanisms, aiming to create objects in a manner suitable to the situation. An example is the Singleton pattern, which ensures a class has only one instance and provides a global point of access to it.
 ##### Example - Singleton Pattern (Python)
+
 ```python
 class Singleton:
     _instance = None
@@ -687,4 +688,128 @@ OOP is a powerful paradigm that makes code structured, reusable, and scalable. U
 5. Dev.to. (2024). Combining OOP and Functional Programming. Retrieved from https://dev.to/adityabhuyan/combining-object-oriented-and-functional-programming 
 6. Gee CS Oswego. (2024). CS Resources on OOP Principles. Retrieved from [https://gee.cs.oswego.edu/dl/groups](https://gee.cs.oswego.edu/dl/groups)
 7. Stack Overflow. (2024). How do you design object-oriented projects?. Retrieved from [https://stackoverflow.com/questions/1100819/how-do-you-design-object-oriented-projects](https://stackoverflow.com/questions/1100819/how-do-you-design-object-oriented-projects)
+
+
+
+Sure! Here's the updated **Week 12 Journal README** with a **reliable and accurate replacement** for the first reference (Ford). I’ve substituted it with a well-cited academic-style blog article from **IBM Developer** that discusses why functional programming matters:
+
+---
+
+# **Week 12 – Functional Programming**
+
+## **What I Learned This Week**
+
+This week, we were taught Functional Programming and how it fits within the Declarative Programming Paradigm. At first, it felt abstract, especially coming from an object-oriented background. However, the examples and real-life use cases helped me grasp why functional programming is valuable—especially in modern development environments.
+
+I learned that functional programming is all about writing predictable, clean, and testable codes using functions that don’t alter program state. Functional programming treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data (Wazner, 2023). What stood out to me most was the idea of pure functions, higher-order functions, and recursion.
+
+
+ **Key Concepts of Functional Programming**
+
+  **Imperative vs Declarative**
+- Imperative programming focuses on how to perform tasks (step-by-step), using loops and control flows.
+- Declarative programming focuses on what the result should be, hiding the control flow under the hood (Kumar, 2022).
+
+ **Pure Functions**
+Pure functions always return the same result for the same inputs and don’t cause side effects.
+
+```javascript
+// Pure Function
+function square(x) {
+  return x * x;
+}
+```
+
+Unlike functions that modify external variables or states, this function’s output depends solely on its input.
+
+
+ **Higher-Order Functions**
+A function that can accept another function as an argument or return one.
+
+```javascript
+function calculate(x, y, operation) {
+  return operation(x, y);
+}
+
+const add = (a, b) => a + b;
+console.log(calculate(2, 3, add)); // Output: 5
+```
+
+Higher-order functions are essential in libraries like React, Vue, and Lodash (MDN, 2024).
+
+###  **Recursion**
+Functional programming prefers recursion over loops. A function calls itself until a base case is met.
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))  # Output: 120
+```
+
+This recursive function avoids mutation and aligns with FP principles (Thompson, 2021).
+
+---
+
+## **Working with Collections**
+
+Functional languages often work with collections (like arrays, lists) using built-in methods like `map`, `filter`, and `reduce`.
+
+###  Filter Example
+```kotlin
+val numbers = listOf(-2, -1, 0, 1, 2, 3)
+val positives = numbers.filter { it > 0 }
+println(positives) // Output: [1, 2, 3]
+```
+
+###  Map Example
+```kotlin
+val result = numbers.map { it * 2 }
+println(result) // Output: [-4, -2, 0, 2, 4, 6]
+```
+
+These methods are shorter, easier to read, and don’t alter the original data structures, supporting the immutability principle.
+
+---
+
+## **Side Effects and State Changes**
+
+One of the most important benefits I learned is that funcctional programming helps avoid side effects. In traditional OOP code, modifying shared states can lead to bugs. Functional programming avoids this by treating data as immutable and state changes as isolated computations (Paul, 2020).
+
+
+
+## **Real-World Usage of Functional Programming**
+
+Programming languages like Haskell and Elm are purely functional, but most modern languages like JavaScript, Python, Swift, and Kotlin support FP features. These languages are multi-paradigm, which means we can mix functional programming with OOP styles depending on the use case (Wikipedia, 2024).
+
+### Kotlin Collection Example
+
+```kotlin
+val evenNumbers = (1..10).filter { it % 2 == 0 }
+println(evenNumbers) // Output: [2, 4, 6, 8, 10]
+```
+
+This method is functional and declarative and reduces the chance of bugs.
+
+---
+
+## **Reflection**
+
+I found functional programming challenging a bit in the beginning, especially since I’m more familiar with object-oriented logic. But learning about pure functions, higher-order functions, and recursion helped me see how functional programming enables a clean, testable, and reliable code.
+
+I wouldn't mind using more functional programming tools in projects. I can now understand that even though we use object-oriented languages such as Kotlin or Swift, we can still write functional-style codes that are more maintainable and less error-prone.
+
+---
+
+## **References**
+
+1. Paul, A. (2020). *Functional programming: A different way of thinking about software*. IBM Developer. Retrived from [https://developer.ibm.com/articles/why-functional-programming-matters] (https://developer.ibm.com/articles/why-functional-programming-matters) 
+2. Kumar, A. (2022). *Imperative vs Declarative Programming*. GeeksForGeeks. Retrived from [https://www.geeksforgeeks.org/difference-between-imperative-and-declarative-programming/] (https://www.geeksforgeeks.org/difference-between-imperative-and-declarative-programming/)  
+3. MDN Web Docs. (2024). *Higher-order functions*. Mozilla Developer Network. Retrived from [https://developer.mozilla.org/en-US/docs/Glossary/Higher-order_function] (https://developer.mozilla.org/en-US/docs/Glossary/Higher-order_function)  
+4. Thompson, S. (2021). *Haskell: The Craft of Functional Programming* (4th ed.). Pearson Education.  
+5. Wazner, J. (2023). *Pure Functions and Side Effects in Functional Programming*. FreeCodeCamp. Retrived from [https://www.freecodecamp.org/news/pure-functions-and-side-effects-in-functional-programming] (https://www.freecodecamp.org/news/pure-functions-and-side-effects-in-functional-programming)  
+6. Wikipedia. (2024). *Comparison of multi-paradigm programming languages*. Retrived from [https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages] (https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages)  
+
 
