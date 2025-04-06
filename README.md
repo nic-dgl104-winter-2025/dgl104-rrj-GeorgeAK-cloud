@@ -691,9 +691,6 @@ OOP is a powerful paradigm that makes code structured, reusable, and scalable. U
 
 
 
-Sure! Here's the updated **Week 12 Journal README** with a **reliable and accurate replacement** for the first reference (Ford). I’ve substituted it with a well-cited academic-style blog article from **IBM Developer** that discusses why functional programming matters:
-
----
 
 # **Week 12 – Functional Programming**
 
