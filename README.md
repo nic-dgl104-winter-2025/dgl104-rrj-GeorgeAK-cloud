@@ -810,3 +810,9 @@ I wouldn't mind using more functional programming tools in projects. I can now u
 6. Wikipedia. (2024). *Comparison of multi-paradigm programming languages*. Retrived from [https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages] (https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages)  
 
 
+## Final Summary Reflection (Weeks 8–12)
+Throughout this project, I witnessed notable improvement in both my technical and teamwork abilities. Every week built upon the previous one, from software design principles at the beginning to creating a real task management system with my project group members George Akaeze and Abdulbasit Aawofeso. We incorporated features like user authentication, task delegation, reminders, and interactive dashboards, while utilizing major design patterns such as Factory, Singleton, and Observer.
+
+The hands-on activity served to reinforce my understanding of architectural designs such as MVC and MVVM, and learned about how one can apply functional programming principles even in object-oriented settings. My team also had the chance to practice core real-world practices such as code review, debugging, version control, and CI/CD pipelines.
+
+In general, this project consolidated my critical thinking in software design, collaboration, and the utilization of abstract concepts in a maintainable, real-world context. I am pleased with the experience and certain that the skills that I acquired will have a good impact on my future software development projects.
